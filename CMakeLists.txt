@@ -33,8 +33,9 @@ if (NOT ${WRENCH_VERSION_EXTRA} STREQUAL "")
 endif ()
 
 message(STATUS "Building WRENCH Version: ${WRENCH_RELEASE_VERSION}")
+message(STATUS "Building WRENCH Version: ${SimGrid_INCLUDE_DIR}")
 
-include_directories(src/wrench/ include/ ${SimGrid_INCLUDE_DIR}/include /usr/include /usr/local/include)
+include_directories(src/wrench/ include/ ${SimGrid_INCLUDE_DIR} /usr/include /usr/local/include)
 
 
 # For MacOS's MacPorts
@@ -117,6 +118,7 @@ set(HEADER_FILES
         include/wrench/simulation/SimulationTrace.h
         include/wrench.h
         include/wrench-dev.h
+        include/wrench/services/compute/noisy_cloud/NoisyCloudComputeService.h
         include/wrench/services/compute/batch/BatchJob.h
         include/wrench/services/compute/batch/BatchComputeServiceMessage.h
         include/wrench/services/compute/batch/BatchComputeService.h
@@ -249,6 +251,7 @@ set(SOURCE_FILES
         src/wrench/services/compute/htcondor/HTCondorCentralManagerServiceMessage.cpp
         src/wrench/services/compute/htcondor/HTCondorCentralManagerServiceMessagePayload.cpp
         src/wrench/services/compute/htcondor/HTCondorNegotiatorService.cpp
+        src/wrench/services/compute/noisy_cloud/NoisyCloudComputeService.cpp
         src/wrench/helper_services/alarm/Alarm.cpp
         src/wrench/helper_services/service_termination_detector/ServiceTerminationDetector.cpp
         src/wrench/helper_services/service_termination_detector/ServiceTerminationDetectorMessage.cpp

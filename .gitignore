@@ -32,6 +32,9 @@
 cmake-build-debug
 .idea
 
+# VSCode folders
+.vscode
+
 # Code coverage (testability files)
 *.gcno
 *.gcda
@@ -44,7 +47,14 @@ docs
 
 # Examples
 wrench-simple-example-cloud
+wrench-simple-example-noisy-cloud
 wrench-simple-example-batch
 
-#JSON
+# JSON
 host_utilization_layout.json
+
+# CMake files
+*CMakeFiles
+CMakeDoxy*
+CMakeCache.txt
+*Makefile

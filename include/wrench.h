@@ -22,6 +22,7 @@
 #include "wrench/services/file_registry/FileRegistryServiceProperty.h"
 #include "wrench/services/compute/virtualized_cluster/VirtualizedClusterComputeService.h"
 #include "wrench/services/compute/virtualized_cluster/VirtualizedClusterComputeServiceProperty.h"
+#include "wrench/services/compute/noisy_cloud/NoisyCloudComputeService.h"
 #include "wrench/services/compute/cloud/CloudComputeService.h"
 #include "wrench/services/compute/cloud/CloudComputeServiceProperty.h"
 #include "wrench/services/compute/batch/BatchComputeService.h"

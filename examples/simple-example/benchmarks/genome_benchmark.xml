@@ -1,507 +1,507 @@
 <?xml version="1.0" ?>
 <root>
     <job id="ID00000" name="fastqSplit_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="35.98815572354685"/>
-            <run id="1" runtime="34.2568389380832"/>
-            <run id="2" runtime="35.56400522423535"/>
-            <run id="3" runtime="35.061767627136255"/>
-            <run id="4" runtime="36.14665159672885"/>
-            <run id="5" runtime="36.38482048463428"/>
-            <run id="6" runtime="36.46764179983848"/>
-            <run id="7" runtime="34.22922378396622"/>
-            <run id="8" runtime="35.929952874247704"/>
-            <run id="9" runtime="35.04405694012692"/>
+        <env name="standard normal">
+            <run id="0" runtime="33.850149219849634"/>
+            <run id="1" runtime="34.77142205714249"/>
+            <run id="2" runtime="36.21792205437561"/>
+            <run id="3" runtime="35.19707744044229"/>
+            <run id="4" runtime="35.49048381542357"/>
+            <run id="5" runtime="36.85164401071778"/>
+            <run id="6" runtime="34.1484005010277"/>
+            <run id="7" runtime="35.822998046126294"/>
+            <run id="8" runtime="37.120315819780586"/>
+            <run id="9" runtime="35.440038488337116"/>
         </env>
     </job>
     <job id="ID00001" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="1.6697901701876232"/>
-            <run id="1" runtime="3.02635477080002"/>
-            <run id="2" runtime="3.144976856772721"/>
-            <run id="3" runtime="3.5322715397247406"/>
-            <run id="4" runtime="3.090377961663234"/>
-            <run id="5" runtime="3.35131592997781"/>
-            <run id="6" runtime="3.6649397368569505"/>
-            <run id="7" runtime="3.815628338467841"/>
-            <run id="8" runtime="2.7745619184288106"/>
-            <run id="9" runtime="3.742770759061001"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.0140277421661934"/>
+            <run id="1" runtime="2.8737321013426533"/>
+            <run id="2" runtime="2.606016716813186"/>
+            <run id="3" runtime="4.4816743274373385"/>
+            <run id="4" runtime="1.7025636065791108"/>
+            <run id="5" runtime="1.2672754663818497"/>
+            <run id="6" runtime="3.450946616625434"/>
+            <run id="7" runtime="2.693387718457207"/>
+            <run id="8" runtime="3.3060018098057835"/>
+            <run id="9" runtime="4.980061912042894"/>
         </env>
     </job>
     <job id="ID00002" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="2.202615036495633"/>
-            <run id="1" runtime="3.4734554717538852"/>
-            <run id="2" runtime="2.467515877104358"/>
-            <run id="3" runtime="1.3773398526274863"/>
-            <run id="4" runtime="2.946702885424778"/>
-            <run id="5" runtime="1.3427715758699077"/>
-            <run id="6" runtime="1.5665084464631345"/>
-            <run id="7" runtime="1.624404540258196"/>
-            <run id="8" runtime="1.4720552435999903"/>
-            <run id="9" runtime="1.9907165799516624"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.9026041994013059"/>
+            <run id="1" runtime="2.290116522930277"/>
+            <run id="2" runtime="2.1624162952964676"/>
+            <run id="3" runtime="1.7925742027126113"/>
+            <run id="4" runtime="1.7361934553986444"/>
+            <run id="5" runtime="1.3833515096651536"/>
+            <run id="6" runtime="2.3685710115225023"/>
+            <run id="7" runtime="2.439565436418372"/>
+            <run id="8" runtime="1.808082024197721"/>
+            <run id="9" runtime="1.7378531734511617"/>
         </env>
     </job>
     <job id="ID00003" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="3.327633784982036"/>
-            <run id="1" runtime="3.0128410746971572"/>
-            <run id="2" runtime="4.020958173118615"/>
-            <run id="3" runtime="3.8792086078644568"/>
-            <run id="4" runtime="3.564284324825367"/>
-            <run id="5" runtime="3.161572209106214"/>
-            <run id="6" runtime="3.6260681598711937"/>
-            <run id="7" runtime="3.7265731551676358"/>
-            <run id="8" runtime="3.24531876436549"/>
-            <run id="9" runtime="2.3599626654532955"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.3964952792687482"/>
+            <run id="1" runtime="0.3690398417149754"/>
+            <run id="2" runtime="3.848952678767202"/>
+            <run id="3" runtime="2.1030965787796396"/>
+            <run id="4" runtime="3.9292806268067855"/>
+            <run id="5" runtime="2.943589016932993"/>
+            <run id="6" runtime="4.556579805666173"/>
+            <run id="7" runtime="1.7096507229517097"/>
+            <run id="8" runtime="0.6807556659994698"/>
+            <run id="9" runtime="2.8268593629181957"/>
         </env>
     </job>
     <job id="ID00004" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="5.335246891928796"/>
-            <run id="1" runtime="2.4658514831430542"/>
-            <run id="2" runtime="4.298171476897828"/>
-            <run id="3" runtime="3.8024757792615214"/>
-            <run id="4" runtime="2.47790826240662"/>
-            <run id="5" runtime="5.00997641835887"/>
-            <run id="6" runtime="3.840772290535092"/>
-            <run id="7" runtime="7.185826879704228"/>
-            <run id="8" runtime="4.494434388758768"/>
-            <run id="9" runtime="4.964469490012716"/>
+        <env name="standard normal">
+            <run id="0" runtime="3.139518750143951"/>
+            <run id="1" runtime="3.918342811926154"/>
+            <run id="2" runtime="3.754278758394947"/>
+            <run id="3" runtime="5.005554082725472"/>
+            <run id="4" runtime="5.285442577220064"/>
+            <run id="5" runtime="2.905159145767618"/>
+            <run id="6" runtime="5.061787042986939"/>
+            <run id="7" runtime="7.014000100787555"/>
+            <run id="8" runtime="5.20700719683382"/>
+            <run id="9" runtime="4.216914541557528"/>
         </env>
     </job>
     <job id="ID00005" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="5.300645197685822"/>
-            <run id="1" runtime="4.834666129303145"/>
-            <run id="2" runtime="5.128154446057376"/>
-            <run id="3" runtime="2.423768990157798"/>
-            <run id="4" runtime="3.7900259025394987"/>
-            <run id="5" runtime="4.382972787531492"/>
-            <run id="6" runtime="3.3053442199918215"/>
-            <run id="7" runtime="3.2147989140084197"/>
-            <run id="8" runtime="4.7250258520716475"/>
-            <run id="9" runtime="4.5206930416822075"/>
+        <env name="standard normal">
+            <run id="0" runtime="4.166113282638001"/>
+            <run id="1" runtime="2.8910408619670434"/>
+            <run id="2" runtime="4.3257945433145"/>
+            <run id="3" runtime="5.101947723423615"/>
+            <run id="4" runtime="4.269951168766365"/>
+            <run id="5" runtime="4.453286721800655"/>
+            <run id="6" runtime="4.157595051367638"/>
+            <run id="7" runtime="4.609606809122982"/>
+            <run id="8" runtime="4.727843551521013"/>
+            <run id="9" runtime="3.4565065350015063"/>
         </env>
     </job>
     <job id="ID00006" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="5.537816212078145"/>
-            <run id="1" runtime="3.729369253029136"/>
-            <run id="2" runtime="4.423309512365865"/>
-            <run id="3" runtime="4.875996788657871"/>
-            <run id="4" runtime="1.9432395627264754"/>
-            <run id="5" runtime="5.593265373953447"/>
-            <run id="6" runtime="4.01870988924876"/>
-            <run id="7" runtime="5.365556102926464"/>
-            <run id="8" runtime="5.049796629254607"/>
-            <run id="9" runtime="4.908812332067292"/>
+        <env name="standard normal">
+            <run id="0" runtime="4.58444925847823"/>
+            <run id="1" runtime="5.068564456790487"/>
+            <run id="2" runtime="3.80163989366874"/>
+            <run id="3" runtime="6.1778345795334015"/>
+            <run id="4" runtime="4.844711182007813"/>
+            <run id="5" runtime="4.803548483776743"/>
+            <run id="6" runtime="5.690206100140499"/>
+            <run id="7" runtime="7.17498235040154"/>
+            <run id="8" runtime="2.671294857997766"/>
+            <run id="9" runtime="4.340638474320248"/>
         </env>
     </job>
     <job id="ID00007" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="2.8616382269435676"/>
-            <run id="1" runtime="2.4653351423022203"/>
-            <run id="2" runtime="0.9552309825402958"/>
-            <run id="3" runtime="1.014765551658048"/>
-            <run id="4" runtime="2.039042976318562"/>
-            <run id="5" runtime="2.1656975000837972"/>
-            <run id="6" runtime="3.7539024878831997"/>
-            <run id="7" runtime="2.2971020565115565"/>
-            <run id="8" runtime="3.2571705044465675"/>
-            <run id="9" runtime="2.2400912150228702"/>
+        <env name="standard normal">
+            <run id="0" runtime="3.3345507828942957"/>
+            <run id="1" runtime="2.5583725967882534"/>
+            <run id="2" runtime="3.5650890690700905"/>
+            <run id="3" runtime="1.8512192357199275"/>
+            <run id="4" runtime="3.225497140144354"/>
+            <run id="5" runtime="1.863113325197446"/>
+            <run id="6" runtime="0.7270884819135328"/>
+            <run id="7" runtime="2.119143414685239"/>
+            <run id="8" runtime="1.7693570041338522"/>
+            <run id="9" runtime="2.835384919192493"/>
         </env>
     </job>
     <job id="ID00008" name="filterContams_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="3.3621626918215384"/>
-            <run id="1" runtime="3.0216475966808964"/>
-            <run id="2" runtime="3.53556981252512"/>
-            <run id="3" runtime="4.029578678760601"/>
-            <run id="4" runtime="2.722050590707309"/>
-            <run id="5" runtime="5.094875702202897"/>
-            <run id="6" runtime="4.577360749951795"/>
-            <run id="7" runtime="2.716710257406586"/>
-            <run id="8" runtime="2.610309437108528"/>
-            <run id="9" runtime="4.3794280863956585"/>
+        <env name="standard normal">
+            <run id="0" runtime="3.026895942042698"/>
+            <run id="1" runtime="3.210510791924255"/>
+            <run id="2" runtime="2.676365138924133"/>
+            <run id="3" runtime="3.821923776284106"/>
+            <run id="4" runtime="2.8263026821986736"/>
+            <run id="5" runtime="3.350790595378405"/>
+            <run id="6" runtime="2.023647197014877"/>
+            <run id="7" runtime="3.7837702047841386"/>
+            <run id="8" runtime="3.5398166404862477"/>
+            <run id="9" runtime="2.9729484680100433"/>
         </env>
     </job>
     <job id="ID00009" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="0.11575041225173144"/>
-            <run id="1" runtime="2.093585551167573"/>
-            <run id="2" runtime="2.441838430219672"/>
-            <run id="3" runtime="0.3997119617362327"/>
-            <run id="4" runtime="2.51160322573759"/>
-            <run id="5" runtime="0.023103878940882616"/>
-            <run id="6" runtime="3.3923977837300434"/>
-            <run id="7" runtime="1.5107583291991817"/>
-            <run id="8" runtime="2.063721359693348"/>
-            <run id="9" runtime="2.096363518603953"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.475370012430754"/>
+            <run id="1" runtime="1.1097785391332784"/>
+            <run id="2" runtime="1.5083823638702112"/>
+            <run id="3" runtime="0.24722955601016572"/>
+            <run id="4" runtime="1.1500986178582309"/>
+            <run id="5" runtime="2.4660952976950825"/>
+            <run id="6" runtime="0.7894957251062125"/>
+            <run id="7" runtime="0.48911467299113665"/>
+            <run id="8" runtime="0.865642413436863"/>
+            <run id="9" runtime="0.29536246023807844"/>
         </env>
     </job>
     <job id="ID00010" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="0.41650656759037985"/>
-            <run id="1" runtime="0.6057106227863439"/>
-            <run id="2" runtime="0.7896220878037088"/>
-            <run id="3" runtime="1.601568628536649"/>
-            <run id="4" runtime="-0.026179232023897825"/>
-            <run id="5" runtime="1.8098196545263865"/>
-            <run id="6" runtime="1.4581569104210954"/>
-            <run id="7" runtime="1.912340333151978"/>
-            <run id="8" runtime="0.04982617278411161"/>
-            <run id="9" runtime="1.3690929847358002"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.4769298968754954"/>
+            <run id="1" runtime="3.0905845859627337"/>
+            <run id="2" runtime="2.2655615849237227"/>
+            <run id="3" runtime="2.543752103345559"/>
+            <run id="4" runtime="1.3052988846513232"/>
+            <run id="5" runtime="3.811211511448251"/>
+            <run id="6" runtime="0.8884892704086866"/>
+            <run id="7" runtime="2.043537854460335"/>
+            <run id="8" runtime="1.6724664011459704"/>
+            <run id="9" runtime="1.071864647009818"/>
         </env>
     </job>
     <job id="ID00011" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="1.0278450485476665"/>
-            <run id="1" runtime="1.3870687856851185"/>
-            <run id="2" runtime="0.829275025130411"/>
-            <run id="3" runtime="4.306290263317928"/>
-            <run id="4" runtime="-0.2771605929115889"/>
-            <run id="5" runtime="0.1942838066088498"/>
-            <run id="6" runtime="2.2782049752108118"/>
-            <run id="7" runtime="1.865962298104772"/>
-            <run id="8" runtime="1.2935877836428953"/>
-            <run id="9" runtime="1.5935007265963508"/>
+        <env name="standard normal">
+            <run id="0" runtime="2.1762370628343923"/>
+            <run id="1" runtime="0.4083496571986354"/>
+            <run id="2" runtime="0.5012705685675126"/>
+            <run id="3" runtime="0.4883556510028052"/>
+            <run id="4" runtime="1.829415961650004"/>
+            <run id="5" runtime="0.40388549222270576"/>
+            <run id="6" runtime="0.8951876324918303"/>
+            <run id="7" runtime="0.8038397756822214"/>
+            <run id="8" runtime="0.35574101095298294"/>
+            <run id="9" runtime="0.03498975682897665"/>
         </env>
     </job>
     <job id="ID00012" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="1.1450759610545072"/>
-            <run id="1" runtime="-0.18529900345226658"/>
-            <run id="2" runtime="0.8847320561040138"/>
-            <run id="3" runtime="1.5198829010005739"/>
-            <run id="4" runtime="0.5013351920996243"/>
-            <run id="5" runtime="2.3891895525097615"/>
-            <run id="6" runtime="0.06326556355689816"/>
-            <run id="7" runtime="-0.26049127236920455"/>
-            <run id="8" runtime="0.384721092206072"/>
-            <run id="9" runtime="0.6799227515663524"/>
+        <env name="standard normal">
+            <run id="0" runtime="0.06504691987399802"/>
+            <run id="1" runtime="1.3643966787249089"/>
+            <run id="2" runtime="1.8189621659399435"/>
+            <run id="3" runtime="1.8235218316271544"/>
+            <run id="4" runtime="0.9906599027875496"/>
+            <run id="5" runtime="0.04424384295830319"/>
+            <run id="6" runtime="1.300322941717773"/>
+            <run id="7" runtime="1.6846511601962537"/>
+            <run id="8" runtime="0.39127612887671814"/>
+            <run id="9" runtime="0.15803718739242278"/>
         </env>
     </job>
     <job id="ID00013" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="0.7229052936588162"/>
-            <run id="1" runtime="-0.2725290991728616"/>
-            <run id="2" runtime="0.7800385912024419"/>
-            <run id="3" runtime="-0.08610764145428884"/>
-            <run id="4" runtime="1.976717009288845"/>
-            <run id="5" runtime="1.1316687922753605"/>
-            <run id="6" runtime="2.50366818492476"/>
-            <run id="7" runtime="1.656036932337417"/>
-            <run id="8" runtime="-0.35477113621608225"/>
-            <run id="9" runtime="0.39032996311685986"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.933730277098356"/>
+            <run id="1" runtime="1.6564662184725452"/>
+            <run id="2" runtime="0.5417798989535373"/>
+            <run id="3" runtime="1.5915008662424324"/>
+            <run id="4" runtime="0.022751588397262545"/>
+            <run id="5" runtime="0.3745108976042798"/>
+            <run id="6" runtime="0.48491405111855107"/>
+            <run id="7" runtime="0.9951599335902962"/>
+            <run id="8" runtime="1.1321899529568338"/>
+            <run id="9" runtime="0.5337632955617683"/>
         </env>
     </job>
     <job id="ID00014" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="1.4134594933334"/>
-            <run id="1" runtime="1.8998221101129231"/>
-            <run id="2" runtime="2.509909132978775"/>
-            <run id="3" runtime="0.8779103846936154"/>
-            <run id="4" runtime="1.331532533087545"/>
-            <run id="5" runtime="0.507858342694918"/>
-            <run id="6" runtime="0.7168592209824846"/>
-            <run id="7" runtime="0.3340700500495979"/>
-            <run id="8" runtime="3.8224390981116807"/>
-            <run id="9" runtime="1.2145744918086034"/>
+        <env name="standard normal">
+            <run id="0" runtime="2.142998651882671"/>
+            <run id="1" runtime="1.63688665638814"/>
+            <run id="2" runtime="0.5727220910399884"/>
+            <run id="3" runtime="3.204627934595836"/>
+            <run id="4" runtime="1.7731427641933661"/>
+            <run id="5" runtime="3.2697993089384374"/>
+            <run id="6" runtime="2.109101547613421"/>
+            <run id="7" runtime="1.45109771147005"/>
+            <run id="8" runtime="0.7062438099080095"/>
+            <run id="9" runtime="2.128875445919702"/>
         </env>
     </job>
     <job id="ID00015" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="1.673482862718211"/>
-            <run id="1" runtime="-0.4703721942393795"/>
-            <run id="2" runtime="1.0639538436863882"/>
-            <run id="3" runtime="1.625835819690673"/>
-            <run id="4" runtime="0.7345180254120559"/>
-            <run id="5" runtime="1.911162900575662"/>
-            <run id="6" runtime="0.36888435637724426"/>
-            <run id="7" runtime="1.2241522943423935"/>
-            <run id="8" runtime="-0.057973930941547014"/>
-            <run id="9" runtime="1.1295459469855842"/>
+        <env name="standard normal">
+            <run id="0" runtime="0.3418290864102448"/>
+            <run id="1" runtime="2.294747880895347"/>
+            <run id="2" runtime="2.0229399614144157"/>
+            <run id="3" runtime="1.5698369365800076"/>
+            <run id="4" runtime="1.286598784961231"/>
+            <run id="5" runtime="0.04137557548040949"/>
+            <run id="6" runtime="0.923675679415385"/>
+            <run id="7" runtime="0.786277739625729"/>
+            <run id="8" runtime="0.8846112850314165"/>
+            <run id="9" runtime="0.9028351599446152"/>
         </env>
     </job>
     <job id="ID00016" name="sol2sanger_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="-0.09154736308348654"/>
-            <run id="1" runtime="2.3153914617395324"/>
-            <run id="2" runtime="-0.44617893236633466"/>
-            <run id="3" runtime="2.1125494440048413"/>
-            <run id="4" runtime="1.5394139366487813"/>
-            <run id="5" runtime="0.9617515711440958"/>
-            <run id="6" runtime="1.3149427001733391"/>
-            <run id="7" runtime="2.5494490913993557"/>
-            <run id="8" runtime="0.47594906028723066"/>
-            <run id="9" runtime="2.107480348932831"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.478983279962943"/>
+            <run id="1" runtime="1.6389285451678004"/>
+            <run id="2" runtime="2.384009536071255"/>
+            <run id="3" runtime="0.4927605799843958"/>
+            <run id="4" runtime="0.022269522138260833"/>
+            <run id="5" runtime="3.4253741041739976"/>
+            <run id="6" runtime="0.7526550490149786"/>
+            <run id="7" runtime="1.0276245287318635"/>
+            <run id="8" runtime="1.3848267067548536"/>
+            <run id="9" runtime="1.6732081593960695"/>
         </env>
     </job>
     <job id="ID00017" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="1.7181568215189142"/>
-            <run id="1" runtime="1.3307479333624732"/>
-            <run id="2" runtime="0.6625271367194563"/>
-            <run id="3" runtime="0.9100579340347459"/>
-            <run id="4" runtime="1.8507914980297027"/>
-            <run id="5" runtime="2.5097295239777835"/>
-            <run id="6" runtime="-0.4801181402849217"/>
-            <run id="7" runtime="1.9162479465306992"/>
-            <run id="8" runtime="3.145397884340243"/>
-            <run id="9" runtime="1.2039910070819042"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.366392806718715"/>
+            <run id="1" runtime="2.033230971062168"/>
+            <run id="2" runtime="0.6953539473456295"/>
+            <run id="3" runtime="1.0785353395282853"/>
+            <run id="4" runtime="2.2146031607005594"/>
+            <run id="5" runtime="2.042615941208272"/>
+            <run id="6" runtime="1.883009065460505"/>
+            <run id="7" runtime="0.7052604046925756"/>
+            <run id="8" runtime="1.2443573098009677"/>
+            <run id="9" runtime="1.2889021381364896"/>
         </env>
     </job>
     <job id="ID00018" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="0.6163265354450655"/>
-            <run id="1" runtime="2.2255877537284094"/>
-            <run id="2" runtime="4.124771402609269"/>
-            <run id="3" runtime="1.6428235091351313"/>
-            <run id="4" runtime="0.10970329939250201"/>
-            <run id="5" runtime="2.51180372264975"/>
-            <run id="6" runtime="1.5055980281185724"/>
-            <run id="7" runtime="3.346389679047216"/>
-            <run id="8" runtime="3.1443994448735966"/>
-            <run id="9" runtime="2.148229755134051"/>
+        <env name="standard normal">
+            <run id="0" runtime="4.185408422992213"/>
+            <run id="1" runtime="0.45877009137854463"/>
+            <run id="2" runtime="2.703566919824055"/>
+            <run id="3" runtime="2.6176465607062616"/>
+            <run id="4" runtime="2.4605152969784094"/>
+            <run id="5" runtime="2.6292780024273954"/>
+            <run id="6" runtime="2.6702536917113218"/>
+            <run id="7" runtime="3.4779437636051522"/>
+            <run id="8" runtime="1.076403008495205"/>
+            <run id="9" runtime="3.254175612096124"/>
         </env>
     </job>
     <job id="ID00019" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="3.1631673162032614"/>
-            <run id="1" runtime="0.5851851829914542"/>
-            <run id="2" runtime="1.1280541768339338"/>
-            <run id="3" runtime="1.67094843088963"/>
-            <run id="4" runtime="2.0806426415861763"/>
-            <run id="5" runtime="3.9621354401057145"/>
-            <run id="6" runtime="0.7519221540927178"/>
-            <run id="7" runtime="-0.10219518753098322"/>
-            <run id="8" runtime="0.3207044161574386"/>
-            <run id="9" runtime="0.05533705204340977"/>
+        <env name="standard normal">
+            <run id="0" runtime="2.125932936918961"/>
+            <run id="1" runtime="0.3346964329111455"/>
+            <run id="2" runtime="2.680391261257868"/>
+            <run id="3" runtime="2.488955071641703"/>
+            <run id="4" runtime="1.4105336104779358"/>
+            <run id="5" runtime="1.875279521336992"/>
+            <run id="6" runtime="1.4140201822553828"/>
+            <run id="7" runtime="0.38392067406739816"/>
+            <run id="8" runtime="1.8700297497103766"/>
+            <run id="9" runtime="0.12229579405590751"/>
         </env>
     </job>
     <job id="ID00020" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="-0.2250447379412901"/>
-            <run id="1" runtime="1.8097100810812234"/>
-            <run id="2" runtime="0.3521546696384874"/>
-            <run id="3" runtime="0.9879075880201545"/>
-            <run id="4" runtime="1.9506335152965784"/>
-            <run id="5" runtime="0.21773554501908676"/>
-            <run id="6" runtime="2.8174892436787733"/>
-            <run id="7" runtime="2.7536367114143703"/>
-            <run id="8" runtime="2.577396426774148"/>
-            <run id="9" runtime="2.2979994374060846"/>
+        <env name="standard normal">
+            <run id="0" runtime="0.6700542436930842"/>
+            <run id="1" runtime="0.9557263692570908"/>
+            <run id="2" runtime="2.877198288071561"/>
+            <run id="3" runtime="2.816832856470861"/>
+            <run id="4" runtime="1.1311764269315678"/>
+            <run id="5" runtime="1.1369006131551818"/>
+            <run id="6" runtime="2.621738442558742"/>
+            <run id="7" runtime="1.4452439652092697"/>
+            <run id="8" runtime="5.39561700658744"/>
+            <run id="9" runtime="1.065829408416616"/>
         </env>
     </job>
     <job id="ID00021" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="0.7542412535286973"/>
-            <run id="1" runtime="1.172580548624946"/>
-            <run id="2" runtime="2.8325512435935742"/>
-            <run id="3" runtime="3.1046741164399707"/>
-            <run id="4" runtime="0.7444606743864338"/>
-            <run id="5" runtime="0.3635931403208965"/>
-            <run id="6" runtime="1.5442561595220865"/>
-            <run id="7" runtime="-0.957461060166797"/>
-            <run id="8" runtime="2.7610368865758677"/>
-            <run id="9" runtime="1.4487300670838905"/>
+        <env name="standard normal">
+            <run id="0" runtime="0.9219093511626546"/>
+            <run id="1" runtime="2.323130478134446"/>
+            <run id="2" runtime="2.618182585870161"/>
+            <run id="3" runtime="3.399354074585392"/>
+            <run id="4" runtime="1.7238793391990168"/>
+            <run id="5" runtime="1.5919994615144015"/>
+            <run id="6" runtime="0.6955095682960214"/>
+            <run id="7" runtime="2.090260212927589"/>
+            <run id="8" runtime="2.307152592308001"/>
+            <run id="9" runtime="1.1280647701019713"/>
         </env>
     </job>
     <job id="ID00022" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="0.5918531697289249"/>
-            <run id="1" runtime="2.9589400875868463"/>
-            <run id="2" runtime="1.5134434770444534"/>
-            <run id="3" runtime="1.6633539538511934"/>
-            <run id="4" runtime="1.8883396658419642"/>
-            <run id="5" runtime="0.7134214130115454"/>
-            <run id="6" runtime="2.4627815360664043"/>
-            <run id="7" runtime="1.8126745873207888"/>
-            <run id="8" runtime="1.9711157724071762"/>
-            <run id="9" runtime="3.1309014797726116"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.9672522845214293"/>
+            <run id="1" runtime="2.557054871074227"/>
+            <run id="2" runtime="1.6858890163544915"/>
+            <run id="3" runtime="1.6419742493994005"/>
+            <run id="4" runtime="2.1022299094578143"/>
+            <run id="5" runtime="0.9988631922486318"/>
+            <run id="6" runtime="0.0613811724344957"/>
+            <run id="7" runtime="2.8625175568197405"/>
+            <run id="8" runtime="1.2347091616014048"/>
+            <run id="9" runtime="2.4094447693528482"/>
         </env>
     </job>
     <job id="ID00023" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="3.902250224640783"/>
-            <run id="1" runtime="2.190111937692049"/>
-            <run id="2" runtime="1.1666191103785148"/>
-            <run id="3" runtime="3.61218636485024"/>
-            <run id="4" runtime="2.956834730776254"/>
-            <run id="5" runtime="1.4381860814580691"/>
-            <run id="6" runtime="4.457865291514356"/>
-            <run id="7" runtime="2.820577793933092"/>
-            <run id="8" runtime="2.095540204261765"/>
-            <run id="9" runtime="3.597782421111779"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.430860274449613"/>
+            <run id="1" runtime="1.1081407892496533"/>
+            <run id="2" runtime="3.337646590142792"/>
+            <run id="3" runtime="3.106814963427416"/>
+            <run id="4" runtime="1.316137300891988"/>
+            <run id="5" runtime="1.6600829881138957"/>
+            <run id="6" runtime="3.4412419777674095"/>
+            <run id="7" runtime="2.400781502878787"/>
+            <run id="8" runtime="2.768407456299366"/>
+            <run id="9" runtime="1.724140109665036"/>
         </env>
     </job>
     <job id="ID00024" name="fastq2bfq_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="4.682375592961707"/>
-            <run id="1" runtime="4.74184769966228"/>
-            <run id="2" runtime="2.431905728873083"/>
-            <run id="3" runtime="4.2781705139753985"/>
-            <run id="4" runtime="3.4421747311235906"/>
-            <run id="5" runtime="2.1082284687573196"/>
-            <run id="6" runtime="2.182094475390001"/>
-            <run id="7" runtime="2.5668549092147326"/>
-            <run id="8" runtime="3.981328322726235"/>
-            <run id="9" runtime="1.877484092792044"/>
+        <env name="standard normal">
+            <run id="0" runtime="1.6635597623136786"/>
+            <run id="1" runtime="4.096374627194417"/>
+            <run id="2" runtime="2.221567856543414"/>
+            <run id="3" runtime="4.151035902314043"/>
+            <run id="4" runtime="3.384128938283899"/>
+            <run id="5" runtime="3.5260803210893723"/>
+            <run id="6" runtime="0.8594101833178516"/>
+            <run id="7" runtime="1.7872474697132823"/>
+            <run id="8" runtime="2.219912164010527"/>
+            <run id="9" runtime="3.7074530858097963"/>
         </env>
     </job>
     <job id="ID00025" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="12515.73215108888"/>
-            <run id="1" runtime="12515.793219450621"/>
-            <run id="2" runtime="12514.859480479648"/>
-            <run id="3" runtime="12516.040284276829"/>
-            <run id="4" runtime="12515.163010419892"/>
-            <run id="5" runtime="12514.49151671374"/>
-            <run id="6" runtime="12517.268402413032"/>
-            <run id="7" runtime="12513.552087499313"/>
-            <run id="8" runtime="12516.13636234424"/>
-            <run id="9" runtime="12516.080644570518"/>
+        <env name="standard normal">
+            <run id="0" runtime="12514.342883143821"/>
+            <run id="1" runtime="12516.092149666516"/>
+            <run id="2" runtime="12513.278149678294"/>
+            <run id="3" runtime="12516.474343628295"/>
+            <run id="4" runtime="12514.575499431581"/>
+            <run id="5" runtime="12515.05101567854"/>
+            <run id="6" runtime="12516.959269130735"/>
+            <run id="7" runtime="12514.403269042497"/>
+            <run id="8" runtime="12514.676632279648"/>
+            <run id="9" runtime="12514.394692887932"/>
         </env>
     </job>
     <job id="ID00026" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="11306.39687525979"/>
-            <run id="1" runtime="11306.840855333625"/>
-            <run id="2" runtime="11307.40565110252"/>
-            <run id="3" runtime="11305.901225860945"/>
-            <run id="4" runtime="11307.524199482965"/>
-            <run id="5" runtime="11306.825513327385"/>
-            <run id="6" runtime="11305.570384316035"/>
-            <run id="7" runtime="11308.396594221267"/>
-            <run id="8" runtime="11307.803980127672"/>
-            <run id="9" runtime="11307.392497514873"/>
+        <env name="standard normal">
+            <run id="0" runtime="11307.67140832125"/>
+            <run id="1" runtime="11304.131268420906"/>
+            <run id="2" runtime="11305.734562946054"/>
+            <run id="3" runtime="11307.742891865959"/>
+            <run id="4" runtime="11306.372487992048"/>
+            <run id="5" runtime="11305.711571066757"/>
+            <run id="6" runtime="11307.589680314388"/>
+            <run id="7" runtime="11305.269848213426"/>
+            <run id="8" runtime="11308.252699976454"/>
+            <run id="9" runtime="11308.124357248646"/>
         </env>
     </job>
     <job id="ID00027" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="11077.058998822205"/>
-            <run id="1" runtime="11078.19552416893"/>
-            <run id="2" runtime="11080.896530832"/>
-            <run id="3" runtime="11077.938188370857"/>
-            <run id="4" runtime="11078.077920360613"/>
-            <run id="5" runtime="11079.505257864494"/>
-            <run id="6" runtime="11077.989678765562"/>
-            <run id="7" runtime="11078.017513380411"/>
-            <run id="8" runtime="11079.395902169183"/>
-            <run id="9" runtime="11078.217539673096"/>
+        <env name="standard normal">
+            <run id="0" runtime="11078.530593699672"/>
+            <run id="1" runtime="11077.895274866809"/>
+            <run id="2" runtime="11080.166619255433"/>
+            <run id="3" runtime="11079.490881619176"/>
+            <run id="4" runtime="11077.999149356687"/>
+            <run id="5" runtime="11079.083187899269"/>
+            <run id="6" runtime="11078.435770988095"/>
+            <run id="7" runtime="11077.705945001737"/>
+            <run id="8" runtime="11078.906345191404"/>
+            <run id="9" runtime="11078.955837312045"/>
         </env>
     </job>
     <job id="ID00028" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="17502.215794536856"/>
-            <run id="1" runtime="17501.934811292977"/>
-            <run id="2" runtime="17501.80024115263"/>
-            <run id="3" runtime="17501.200037116254"/>
-            <run id="4" runtime="17502.67514621686"/>
-            <run id="5" runtime="17502.578693840485"/>
-            <run id="6" runtime="17502.117355769955"/>
-            <run id="7" runtime="17503.50131641797"/>
-            <run id="8" runtime="17502.731448272385"/>
-            <run id="9" runtime="17503.849807823757"/>
+        <env name="standard normal">
+            <run id="0" runtime="17503.52642426398"/>
+            <run id="1" runtime="17504.17548879927"/>
+            <run id="2" runtime="17502.731838242773"/>
+            <run id="3" runtime="17501.587952679343"/>
+            <run id="4" runtime="17502.45858338423"/>
+            <run id="5" runtime="17502.367679092084"/>
+            <run id="6" runtime="17502.984301864915"/>
+            <run id="7" runtime="17500.988078330425"/>
+            <run id="8" runtime="17502.08010539738"/>
+            <run id="9" runtime="17501.848768345622"/>
         </env>
     </job>
     <job id="ID00029" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="11710.69732306513"/>
-            <run id="1" runtime="11709.785773222533"/>
-            <run id="2" runtime="11710.100915788373"/>
-            <run id="3" runtime="11710.218702796368"/>
-            <run id="4" runtime="11710.028680052073"/>
-            <run id="5" runtime="11710.40289379587"/>
-            <run id="6" runtime="11711.228296712048"/>
-            <run id="7" runtime="11709.583791726183"/>
-            <run id="8" runtime="11711.106641627764"/>
-            <run id="9" runtime="11711.416603797725"/>
+        <env name="standard normal">
+            <run id="0" runtime="11710.386082174717"/>
+            <run id="1" runtime="11711.559800849936"/>
+            <run id="2" runtime="11709.409544404889"/>
+            <run id="3" runtime="11710.209809687141"/>
+            <run id="4" runtime="11708.940760965004"/>
+            <run id="5" runtime="11708.919500971033"/>
+            <run id="6" runtime="11710.097251160165"/>
+            <run id="7" runtime="11709.950645945066"/>
+            <run id="8" runtime="11710.504415620439"/>
+            <run id="9" runtime="11710.464461829175"/>
         </env>
     </job>
     <job id="ID00030" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="9737.364666237869"/>
-            <run id="1" runtime="9736.394246734959"/>
-            <run id="2" runtime="9737.922718055805"/>
-            <run id="3" runtime="9739.081231081549"/>
-            <run id="4" runtime="9737.373452343454"/>
-            <run id="5" runtime="9735.893093837678"/>
-            <run id="6" runtime="9735.630023027546"/>
-            <run id="7" runtime="9736.417259702604"/>
-            <run id="8" runtime="9736.417445296202"/>
-            <run id="9" runtime="9736.85288784835"/>
+        <env name="standard normal">
+            <run id="0" runtime="9736.240415803739"/>
+            <run id="1" runtime="9738.17235249956"/>
+            <run id="2" runtime="9738.090872402534"/>
+            <run id="3" runtime="9737.087992914154"/>
+            <run id="4" runtime="9739.105264031501"/>
+            <run id="5" runtime="9737.747696012537"/>
+            <run id="6" runtime="9738.382676705452"/>
+            <run id="7" runtime="9738.76430515136"/>
+            <run id="8" runtime="9736.800335934518"/>
+            <run id="9" runtime="9737.997536564368"/>
         </env>
     </job>
     <job id="ID00031" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="15270.434153041733"/>
-            <run id="1" runtime="15270.782254661706"/>
-            <run id="2" runtime="15271.615675200843"/>
-            <run id="3" runtime="15269.320758533895"/>
-            <run id="4" runtime="15269.176613780668"/>
-            <run id="5" runtime="15270.418134499794"/>
-            <run id="6" runtime="15270.913699144354"/>
-            <run id="7" runtime="15268.823725725924"/>
-            <run id="8" runtime="15271.378578643418"/>
-            <run id="9" runtime="15269.706079241416"/>
+        <env name="standard normal">
+            <run id="0" runtime="15270.05510745943"/>
+            <run id="1" runtime="15271.09195606611"/>
+            <run id="2" runtime="15269.457283833182"/>
+            <run id="3" runtime="15270.233569269963"/>
+            <run id="4" runtime="15271.595384094799"/>
+            <run id="5" runtime="15269.92387861229"/>
+            <run id="6" runtime="15272.524717807977"/>
+            <run id="7" runtime="15268.718290119301"/>
+            <run id="8" runtime="15271.115269067908"/>
+            <run id="9" runtime="15270.269299640982"/>
         </env>
     </job>
     <job id="ID00032" name="map_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="18917.239132842333"/>
-            <run id="1" runtime="18919.430577391544"/>
-            <run id="2" runtime="18918.9403185248"/>
-            <run id="3" runtime="18919.256084951587"/>
-            <run id="4" runtime="18918.169092285974"/>
-            <run id="5" runtime="18918.529616677606"/>
-            <run id="6" runtime="18918.359367458244"/>
-            <run id="7" runtime="18919.27351796354"/>
-            <run id="8" runtime="18917.059389869744"/>
-            <run id="9" runtime="18916.21728785691"/>
+        <env name="standard normal">
+            <run id="0" runtime="18919.755723278213"/>
+            <run id="1" runtime="18918.542189690936"/>
+            <run id="2" runtime="18916.984046431393"/>
+            <run id="3" runtime="18916.78035811143"/>
+            <run id="4" runtime="18919.187886941792"/>
+            <run id="5" runtime="18919.552644593234"/>
+            <run id="6" runtime="18918.518327418635"/>
+            <run id="7" runtime="18918.322903884207"/>
+            <run id="8" runtime="18919.824419851142"/>
+            <run id="9" runtime="18919.46150274623"/>
         </env>
     </job>
     <job id="ID00033" name="mapMerge_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="12.760139152315269"/>
-            <run id="1" runtime="11.949233236513146"/>
-            <run id="2" runtime="11.880400255905402"/>
-            <run id="3" runtime="10.237857112172968"/>
-            <run id="4" runtime="10.23893176988832"/>
-            <run id="5" runtime="11.974737337302754"/>
-            <run id="6" runtime="11.788108601640758"/>
-            <run id="7" runtime="11.890552719641232"/>
-            <run id="8" runtime="10.720004660486726"/>
-            <run id="9" runtime="12.60164791015487"/>
+        <env name="standard normal">
+            <run id="0" runtime="12.846891829689534"/>
+            <run id="1" runtime="11.905822211669745"/>
+            <run id="2" runtime="11.727070333619666"/>
+            <run id="3" runtime="13.213947810277924"/>
+            <run id="4" runtime="11.222632874678004"/>
+            <run id="5" runtime="11.304938104499655"/>
+            <run id="6" runtime="12.980452210414036"/>
+            <run id="7" runtime="11.831093216405772"/>
+            <run id="8" runtime="13.778701062505565"/>
+            <run id="9" runtime="9.156230087086607"/>
         </env>
     </job>
     <job id="ID00034" name="maqindex_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="0.42271473742373994"/>
-            <run id="1" runtime="-2.4393542762353326"/>
-            <run id="2" runtime="0.36025614962348307"/>
-            <run id="3" runtime="1.2069954314155855"/>
-            <run id="4" runtime="1.3647919882627086"/>
-            <run id="5" runtime="0.7709261655213353"/>
-            <run id="6" runtime="0.32101720670567596"/>
-            <run id="7" runtime="0.44783900425742035"/>
-            <run id="8" runtime="-0.17161220497342475"/>
-            <run id="9" runtime="0.9536713246545999"/>
+        <env name="standard normal">
+            <run id="0" runtime="0.4226595155748982"/>
+            <run id="1" runtime="0.0016108220405176739"/>
+            <run id="2" runtime="0.46713153750667635"/>
+            <run id="3" runtime="0.9669195925299032"/>
+            <run id="4" runtime="1.509172189728371"/>
+            <run id="5" runtime="1.5408097557054439"/>
+            <run id="6" runtime="0.8653861753138636"/>
+            <run id="7" runtime="0.9596779749714356"/>
+            <run id="8" runtime="0.8270465726583129"/>
+            <run id="9" runtime="0.2790623667599625"/>
         </env>
     </job>
     <job id="ID00035" name="pileup_chr21">
-        <env vm_type="standard normal">
-            <run id="0" runtime="5659.237561556668"/>
-            <run id="1" runtime="5657.968003248871"/>
-            <run id="2" runtime="5659.327418863156"/>
-            <run id="3" runtime="5660.535911550022"/>
-            <run id="4" runtime="5660.583362763908"/>
-            <run id="5" runtime="5659.771535072085"/>
-            <run id="6" runtime="5660.447540003915"/>
-            <run id="7" runtime="5657.30822159255"/>
-            <run id="8" runtime="5660.189687778039"/>
-            <run id="9" runtime="5659.4438288813"/>
+        <env name="standard normal">
+            <run id="0" runtime="5659.295610190764"/>
+            <run id="1" runtime="5659.239758712889"/>
+            <run id="2" runtime="5660.962431798342"/>
+            <run id="3" runtime="5659.9945269008995"/>
+            <run id="4" runtime="5660.172725700719"/>
+            <run id="5" runtime="5658.043300318357"/>
+            <run id="6" runtime="5659.2895413285805"/>
+            <run id="7" runtime="5660.119208624112"/>
+            <run id="8" runtime="5658.537606429377"/>
+            <run id="9" runtime="5660.744810778506"/>
         </env>
     </job>
 </root>

@@ -4,7 +4,7 @@ import random
 
 class distribution:
     def get_time(self, job):
-        return float(job.getAttribute("runtime")) + random.normalvariate(0, 1)
+        return abs(float(job.getAttribute("runtime")) + random.normalvariate(0, 1))
 
     def get(self, name):
         return "standard normal"
@@ -43,7 +43,7 @@ for job in jobs:
     root.appendChild(result_job)
     for distr in distributions:
         env = result.createElement("env")
-        env.setAttribute("vm_type", distr.get("vm_type"))
+        env.setAttribute("name", distr.get("vm_type"))
         result_job.appendChild(env)
         for i in range(int(args.runs)):
             run = result.createElement("run")
