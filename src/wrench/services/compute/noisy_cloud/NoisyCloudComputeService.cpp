@@ -51,4 +51,47 @@ namespace wrench {
         return result;
     }
 
+    void NoisyCloudComputeService::processSubmitStandardJob(const std::string &answer_mailbox, StandardJob *job,
+                                              std::map<std::string, std::string> &service_specific_args) {
+        const auto& vm_name = service_specific_args["vm_name"];
+        if (!vm_list.count(vm_name)) {
+            throw std::invalid_argument("NoisyCloudComputeService::submitStandardJob(): Unknown VM name '" + vm_name + "'");
+        }
+        auto vm_ptr = vm_list[vm_name];
+        std::unique_ptr<StandardJob> newJob = mutateJob(job);
+ 
+        job_copies.push_back(std::move(newJob));
+    }
+
+    std::unique_ptr<StandardJob> NoisyCloudComputeService::mutateJob(StandardJob *job) {
+        std::vector<WorkflowTask *> old_tasks = job->getTasks();
+        std::vector<WorkflowTask *> new_tasks;
+        for (auto task_ptr : old_tasks) {
+            std::unique_ptr<WorkflowTask> new_task(new WorkflowTask(
+                task_ptr->getID(),
+                mutateFlops(task_ptr->getFlops()),
+                task_ptr->getMinNumCores(),
+                task_ptr->getMaxNumCores(),
+                task_ptr->getParallelEfficiency(),
+                task_ptr->getMemoryRequirement()
+            ));
+            new_tasks.push_back(new_task.get());
+            task_copies.push_back(std::move(new_task));
+        }
+        std::unique_ptr<StandardJob> new_job(
+                    new StandardJob(
+                        job->workflow, 
+                        new_tasks, 
+                        job->file_locations,
+                        job->pre_file_copies,
+                        job->post_file_copies,
+                        job->cleanup_file_deletions
+                    ));
+        
+        job_copies.push_back(std::move(new_job));
+    }
+
+    double NoisyCloudComputeService::mutateFlops(double flops) {
+        return (1 + instability.mean) * flops + instability_distribution(generator);
+    }
 }

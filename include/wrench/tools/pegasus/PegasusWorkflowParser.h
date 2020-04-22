@@ -11,6 +11,9 @@
 #define WRENCH_PEGASUSWORKFLOWPARSER_H
 
 #include <string>
+#include <map>
+#include <random>
+#include <functional>
 
 namespace wrench {
 
@@ -21,9 +24,28 @@ namespace wrench {
      *        provided by the Pegasus project
      */
     class PegasusWorkflowParser {
+    public:
+        struct EnvironmentInstability {
+            double deviation;
+            double mean;
+            std::map<std::string, std::vector<double>> tasks_runtime;
+            EnvironmentInstability()
+                : deviation(0)
+                , mean(0) {
+            }
+        };
+
+    private:
+
+        static EnvironmentInstability ComputeInstability(std::string filename);
 
     public:
-
+        /**
+         * @brief Common method to parse DAX format with generalized setter of execution times
+         */
+        static Workflow *createWorkflowFromDAXWithProcessor(const std::string &filename,
+                                                            const std::function<double(const std::string&, double)> &processor,
+                                                            bool redundant_dependencies);
         /**
          * @brief Method to import a Pegasus workflow in DAX format
          */
@@ -39,6 +61,11 @@ namespace wrench {
          */
         static Workflow *createExecutableWorkflowFromJSON(const std::string &filename, const std::string &reference_flop_rate, bool redundant_dependencies = false);
 
+        /**
+         * @brief Method to parse workflow adding noise
+         */
+        static Workflow *createNoisedWorkflowFromDAX(const std::string &filename, const std::string &reference_flop_rate,
+                                                     const std::string &benchmarks_file, bool redundant_dependencies = false);
     };
 
 };

@@ -118,7 +118,6 @@ set(HEADER_FILES
         include/wrench/simulation/SimulationTrace.h
         include/wrench.h
         include/wrench-dev.h
-        include/wrench/services/compute/noisy_cloud/NoisyCloudComputeService.h
         include/wrench/services/compute/batch/BatchJob.h
         include/wrench/services/compute/batch/BatchComputeServiceMessage.h
         include/wrench/services/compute/batch/BatchComputeService.h
@@ -251,7 +250,6 @@ set(SOURCE_FILES
         src/wrench/services/compute/htcondor/HTCondorCentralManagerServiceMessage.cpp
         src/wrench/services/compute/htcondor/HTCondorCentralManagerServiceMessagePayload.cpp
         src/wrench/services/compute/htcondor/HTCondorNegotiatorService.cpp
-        src/wrench/services/compute/noisy_cloud/NoisyCloudComputeService.cpp
         src/wrench/helper_services/alarm/Alarm.cpp
         src/wrench/helper_services/service_termination_detector/ServiceTerminationDetector.cpp
         src/wrench/helper_services/service_termination_detector/ServiceTerminationDetectorMessage.cpp

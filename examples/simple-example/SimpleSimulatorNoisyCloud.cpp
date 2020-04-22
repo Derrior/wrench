@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
     std::cerr << "Loading workflow..." << std::endl;
     wrench::Workflow *workflow;
     if (ends_with(workflow_file, "dax")) {
-        workflow = wrench::PegasusWorkflowParser::createWorkflowFromDAX(workflow_file, "1000Gf");
+        workflow = wrench::PegasusWorkflowParser::createNoisedWorkflowFromDAX(workflow_file, "1000Gf", benchmark_file);
     } else if (ends_with(workflow_file,"json")) {
         workflow = wrench::PegasusWorkflowParser::createWorkflowFromJSON(workflow_file, "1000Gf");
     } else {
@@ -120,8 +120,8 @@ int main(int argc, char **argv) {
 
     /* Add the cloud service to the simulation, catching a possible exception */
     try {
-        auto cloud_service = simulation.add(new wrench::NoisyCloudComputeService(
-                wms_host, execution_hosts, "", benchmark_file, "standard normal", {},
+        auto cloud_service = simulation.add(new wrench::CloudComputeService(
+                wms_host, execution_hosts, "", {},
                 {{wrench::CloudComputeServiceMessagePayload::STOP_DAEMON_MESSAGE_PAYLOAD, 1024}}));
         compute_services.insert(cloud_service);
     } catch (std::invalid_argument &e) {

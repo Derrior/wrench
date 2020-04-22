@@ -26,7 +26,7 @@ else()
 endif()
 
 # cloud example
-set(APP_CLOUD_FILES SimpleSimulatorCloud.cpp)
+set(APP_CLOUD_FILES SimpleSimulatorNoisyCloud.cpp)
 add_executable(wrench-simple-example-noisy-cloud ${SOURCE_FILES} ${APP_CLOUD_FILES})
 
 if (ENABLE_BATSCHED)

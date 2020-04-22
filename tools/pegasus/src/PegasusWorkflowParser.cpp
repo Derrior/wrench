@@ -235,25 +235,16 @@ namespace wrench {
      *
      * @throw std::invalid_argument
      */
-    Workflow *PegasusWorkflowParser::createWorkflowFromDAX(const std::string &filename, const std::string &reference_flop_rate,
-                                                                   bool redundant_dependencies) {
-
+    Workflow *PegasusWorkflowParser::createWorkflowFromDAXWithProcessor(const std::string &filename,
+                                                         const std::function<double(const std::string&, double)> &processor,
+                                                         bool redundant_dependencies) {
         pugi::xml_document dax_tree;
-
-        auto *workflow = new Workflow();
-
-        double flop_rate;
-
-        try {
-            flop_rate = UnitParser::parse_compute_speed(reference_flop_rate);
-        } catch (std::invalid_argument &e) {
-            throw;
-        }
 
         if (not dax_tree.load_file(filename.c_str())) {
             throw std::invalid_argument("Workflow::createWorkflowFromDAX(): Invalid DAX file");
         }
 
+        auto *workflow = new Workflow();
         // Get the root node
         pugi::xml_node dag = dax_tree.child("adag");
 
@@ -281,7 +272,8 @@ namespace wrench {
 
             // Create the task
             // If the DAX says num_procs = x, then we set min_cores=1, max_cores=x, efficiency=1.0
-            task = workflow->addTask(id, runtime * flop_rate, 1, num_procs, 1.0, 0.0);
+            double task_complexity = processor(id, runtime);
+            task = workflow->addTask(id, task_complexity, 1, num_procs, 1.0, 0.0);
 
             // Go through the children "uses" nodes
             for (pugi::xml_node uses = job.child("uses"); uses; uses = uses.next_sibling("uses")) {
@@ -325,4 +317,85 @@ namespace wrench {
         return workflow;
     }
 
+
+    Workflow *PegasusWorkflowParser::createWorkflowFromDAX(const std::string &filename, const std::string &reference_flop_rate,
+                                                                   bool redundant_dependencies) {
+        double flop_rate = 0;
+
+        try {
+            flop_rate = UnitParser::parse_compute_speed(reference_flop_rate);
+        } catch (std::invalid_argument &e) {
+            throw;
+        }
+
+        return createWorkflowFromDAXWithProcessor(filename, 
+                [flop_rate](const std::string &/*id*/, double runtime) {
+                    return runtime * flop_rate;
+                }, redundant_dependencies);
+    }
+
+    Workflow *PegasusWorkflowParser::createNoisedWorkflowFromDAX(const std::string &filename, const std::string &reference_flop_rate,
+                                                                 const std::string &benchmarks_file, bool redundant_dependencies) {
+        double flop_rate = 0;
+
+        try {
+            flop_rate = UnitParser::parse_compute_speed(reference_flop_rate);
+        } catch (std::invalid_argument &e) {
+            throw;
+        }
+
+        EnvironmentInstability instability = ComputeInstability(benchmarks_file);
+        std::random_device rd;
+        std::mt19937 generator;
+        std::normal_distribution<> instability_distribution(0, instability.deviation);
+
+        return createWorkflowFromDAXWithProcessor(filename, 
+                    [flop_rate, &instability, &instability_distribution, &generator]
+                    (const std::string &/*id*/, double runtime) {
+                        return flop_rate * abs((1 + instability.mean) * runtime + instability_distribution(generator));
+                    }, redundant_dependencies);
+    }
+
+    PegasusWorkflowParser::EnvironmentInstability PegasusWorkflowParser::ComputeInstability(std::string filename) {
+        pugi::xml_document benchmarks_tree;
+        benchmarks_tree.load_file(filename.c_str());
+        pugi::xml_node root = benchmarks_tree.child("root");
+        EnvironmentInstability result;
+        std::map<std::pair<size_t, size_t>, double> deviations_by_test_case;
+        for (pugi::xml_node job = root.child("job"); job; job = job.next_sibling("job")) {
+            std::vector<double>& runtimes_list = result.tasks_runtime[job.attribute("id").value()];
+            for (pugi::xml_node run = job.child("run"); run; run = run.next_sibling("run")) {
+                runtimes_list.push_back(std::stod(run.attribute("runtime").value()));
+            }
+            double task_mean_deviation = 0;
+            double std_deviation = 0;
+            for (size_t i = 0; i < runtimes_list.size(); i++) {
+                double first_time = runtimes_list[i];
+                for (size_t j = i + 1; j < runtimes_list.size(); j++) {
+                    double second_time = runtimes_list[j];
+                    double dev = abs(first_time - second_time) / max(first_time, second_time);
+                    task_mean_deviation += dev;
+                    deviations_by_test_case[std::make_pair(i, j)] += dev;
+                }
+            }
+            double pair_amount = runtimes_list.size() * (runtimes_list.size() - 1) / 2;
+            task_mean_deviation /= pair_amount;
+            result.mean += task_mean_deviation;
+        }
+
+        result.mean /= result.tasks_runtime.size();
+        for (auto& test_case_dev : deviations_by_test_case) {
+            test_case_dev.second /= result.tasks_runtime.size();
+        }
+
+        for (auto test_case_dev1 : deviations_by_test_case) {
+            double second_momentum = (test_case_dev1.second - result.mean);
+            second_momentum *= second_momentum;
+
+            result.deviation += second_momentum / (deviations_by_test_case.size() - 1); // corrected deviation
+        }
+        std::cerr << "Mean relative deviation from runs: " << result.mean << std::endl;
+        std::cerr << "Standard deviation of mean relative deviation from runs: " << result.deviation << std::endl;
+        return result;
+    }
 };

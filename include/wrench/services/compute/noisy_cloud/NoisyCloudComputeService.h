@@ -44,8 +44,12 @@ class NoisyCloudComputeService : public CloudComputeService {
 
     private:
         EnvironmentInstability instability;
+        std::random_device rd;
+        std::mt19937 generator;
+        std::normal_distribution<> instability_distribution;
 
         static EnvironmentInstability ComputeInstability(std::string filename, std::string env_name);
+
 
     public:
 
@@ -58,6 +62,7 @@ class NoisyCloudComputeService : public CloudComputeService {
                      std::map<std::string, double> messagepayload_list = {})
             : CloudComputeService(hostname, execution_hosts, scratch_space_mount_point, property_list, messagepayload_list) {
             instability = ComputeInstability(noise_description_file, environment_name);
+            instability_distribution = std::normal_distribution<>(0, instability.deviation);
         }
 
         /***********************/
@@ -151,9 +156,10 @@ class NoisyCloudComputeService : public CloudComputeService {
 
         // virtual void processDestroyVM(const std::string &answer_mailbox, const std::string &vm_name);
 
-        /*virtual void processSubmitStandardJob(const std::string &answer_mailbox, StandardJob *job,
-                                              std::map<std::string, std::string> &service_specific_args);
+        virtual void processSubmitStandardJob(const std::string &answer_mailbox, StandardJob *job,
+                                              std::map<std::string, std::string> &service_specific_args) override;
 
+        /*
         virtual void processSubmitPilotJob(const std::string &answer_mailbox, PilotJob *job,
                                            std::map<std::string, std::string> &service_specific_args);
 
@@ -164,18 +170,12 @@ class NoisyCloudComputeService : public CloudComputeService {
         static unsigned long VM_ID;
         /** \endcond */
 
-        /** @brief List of execution host names */
-        std::vector<std::string> execution_hosts;
+        
+        std::unique_ptr<StandardJob> mutateJob(StandardJob *job);
+        double mutateFlops(double flops);
 
-        /** @brief Map of used RAM at the hosts */
-        std::map<std::string, double> used_ram_per_execution_host;
-
-        /** @brief Map of number of used cores at the hosts */
-        std::map<std::string, unsigned long> used_cores_per_execution_host;
-
-        /** @brief A map of VMs */
-        std::map<std::string, std::pair<std::shared_ptr<S4U_VirtualMachine>, std::shared_ptr<BareMetalComputeService>>> vm_list;
-
+        std::vector<std::unique_ptr<StandardJob>> job_copies;
+        std::vector<std::unique_ptr<WorkflowTask>> task_copies;
         /***********************/
         /** \endcond           */
         /***********************/
