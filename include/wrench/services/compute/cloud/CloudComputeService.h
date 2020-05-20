@@ -41,7 +41,7 @@ namespace wrench {
                 {CloudComputeServiceProperty::SUPPORTS_PILOT_JOBS,         "false"},
                 {CloudComputeServiceProperty::SUPPORTS_STANDARD_JOBS,      "false"},
                 {CloudComputeServiceProperty::VM_BOOT_OVERHEAD_IN_SECONDS, "0.0"},
-                {CloudComputeServiceProperty::VM_RESOURCE_ALLOCATION_ALGORITHM, "best-fit-ram-first"}
+                {CloudComputeServiceProperty::VM_RESOURCE_ALLOCATION_ALGORITHM, "best-fit-cores-first"}
         };
 
         std::map<std::string, double> default_messagepayload_values = {

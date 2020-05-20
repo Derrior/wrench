@@ -2,25 +2,893 @@
 <!DOCTYPE platform SYSTEM "http://simgrid.gforge.inria.fr/simgrid/simgrid.dtd">
 <platform version="4.1">
     <zone id="AS0" routing="Full">
-        <host id="Tremblay" speed="1000Gf" core="4"/>
-        <host id="Jupiter" speed="1000Gf" core="2"/>
-        <host id="Fafard" speed="1000Gf" core="1">
-            <disk id="large_disk" read_bw="40MBps" write_bw="40MBps">
-                <prop id="size" value="5000GiB"/>
+        <host id="Tremblay" speed="100Gf" core="100"/>
+        <host id="Jupiter" speed="100Gf" core="100"/>
+        <host id="1" speed="100Gf" core="100"/>
+        <host id="2" speed="100Gf" core="100"/>
+        <host id="3" speed="100Gf" core="100"/>
+        <host id="4" speed="100Gf" core="100"/>
+        <host id="5" speed="100Gf" core="100"/>
+        <host id="6" speed="100Gf" core="100"/>
+        <host id="7" speed="100Gf" core="100"/>
+        <host id="8" speed="100Gf" core="100"/>
+        <host id="9" speed="100Gf" core="100"/>
+        <host id="10" speed="100Gf" core="100"/>
+        <host id="11" speed="100Gf" core="100"/>
+        <host id="12" speed="100Gf" core="100"/>
+        <host id="13" speed="100Gf" core="100"/>
+        <host id="14" speed="100Gf" core="100"/>
+        <host id="15" speed="100Gf" core="100"/>
+        <host id="Fafard" speed="100Gf" core="100">
+            <disk id="large_disk" read_bw="10000TBps" write_bw="10000TBps">
+                <prop id="size" value="5000TB"/>
+                <prop id="mount" value="/"/>
+            </disk>
+        </host>
+        <host id="Callisto" speed="100Gf" core="1">
+            <disk id="large_disk" read_bw="10000TBps" write_bw="10000TBps">
+                <prop id="size" value="5000TB"/>
                 <prop id="mount" value="/"/>
             </disk>
         </host>
 
-        <link id="1" bandwidth="125MBps" latency="100us"/>
+        <link id="1" bandwidth="10000TBps" latency="0us"/>
+        <link id="2" bandwidth="1000000" latency="0us"/>
 
-        <route src="Tremblay" dst="Jupiter">
+        <route src="2" dst="1">
             <link_ctn id="1"/>
         </route>
+
+
+        <route src="3" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="3" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="4" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="4" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="4" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="5" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="5" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="5" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="5" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="6" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="6" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="6" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="6" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="6" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="7" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="7" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="7" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="7" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="7" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="7" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="8" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="8" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="8" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="8" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="8" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="8" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="8" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="9" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="10" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="11" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="12" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="13" dst="12">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="12">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="14" dst="13">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="12">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="13">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="15" dst="14">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="12">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="13">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="14">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Tremblay" dst="15">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="12">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="13">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="14">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="15">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Jupiter" dst="Tremblay">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="12">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="13">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="14">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Fafard" dst="15">
+            <link_ctn id="1"/>
+        </route>
+
+
         <route src="Fafard" dst="Tremblay">
             <link_ctn id="1"/>
         </route>
+
+
         <route src="Fafard" dst="Jupiter">
             <link_ctn id="1"/>
         </route>
+
+
+        <route src="Callisto" dst="1">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="2">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="3">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="4">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="5">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="6">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="7">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="8">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="9">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="10">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="11">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="12">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="13">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="14">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="15">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="Tremblay">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="Jupiter">
+            <link_ctn id="1"/>
+        </route>
+
+
+        <route src="Callisto" dst="Fafard">
+            <link_ctn id="1"/>
+        </route>
+
     </zone>
 </platform>
+

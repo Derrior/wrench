@@ -8,6 +8,10 @@
  */
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+
 #include <wrench.h>
 
 #include "SimpleWMS.h"
@@ -35,6 +39,7 @@ int main(int argc, char **argv) {
      * Declaration of the top-level WRENCH simulation object
      */
     wrench::Simulation simulation;
+    srand(time(NULL));
 
     /*
      * Initialization of the simulation, which may entail extracting WRENCH-specific and
@@ -99,7 +104,7 @@ int main(int argc, char **argv) {
      * cloud service will be able to run tasks
      */
     std::string executor_host = "Tremblay";
-    std::vector<std::string> execution_hosts = {executor_host};
+    std::vector<std::string> execution_hosts = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "Tremblay", "Jupiter", "Fafard", "Callisto"};
 
     /* Create a list of compute services that will be used by the WMS */
     std::set<std::shared_ptr<wrench::ComputeService>> compute_services;
@@ -196,6 +201,8 @@ int main(int argc, char **argv) {
     trace = simulation.getOutput().getTrace<wrench::SimulationTimestampTaskCompletion>();
     std::cerr << "Number of entries in TaskCompletion trace: " << trace.size() << std::endl;
     std::cerr << "Task in first trace entry: " << trace[0]->getContent()->getTask()->getID() << std::endl;
+    std::cerr.precision(20);
+    std::cerr << trace.back()->getDate() << std::endl;
 
     return 0;
 }

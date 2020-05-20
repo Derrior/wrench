@@ -368,7 +368,7 @@ namespace wrench {
 
             try {
                 task->setComputationStartDate(S4U_Simulation::getClock());
-                runMulticoreComputation(task->getFlops(), task->getParallelEfficiency(),
+                runMulticoreComputation(task->getFlopsPrecise(), task->getParallelEfficiency(),
                                         this->simulate_computation_as_sleep);
                 task->setComputationEndDate(S4U_Simulation::getClock());
             } catch (WorkflowExecutionEvent &e) {

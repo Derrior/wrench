@@ -33,6 +33,7 @@ namespace wrench {
         Workflow();
 
         WorkflowTask *addTask(std::string, double flops,
+                              double flops_estimated,
                               unsigned long min_num_cores,
                               unsigned long max_num_cores,
                               double parallel_efficiency,

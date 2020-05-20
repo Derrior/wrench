@@ -45,7 +45,7 @@ def execute(cmd, job_key, benchmark_result):
     start_time = time.time()
     os.system(cmd)
     end_time = time.time()
-    benchmark_result[job_key] = benchmark_result.get(job_id, [])
+    benchmark_result[job_key] = benchmark_result.get(job_key, [])
     benchmark_result[job_key].append(end_time - start_time)
 
     

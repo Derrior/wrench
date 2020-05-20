@@ -10,8 +10,10 @@
 #include <iostream>
 #include <wrench.h>
 
+#include <cstdlib>
 #include "SimpleWMS.h"
 #include "scheduler/CloudStandardJobScheduler.h"
+#include "scheduler/GeneticScheduler.h"
 #include <wrench/tools/pegasus/PegasusWorkflowParser.h>
 
 
@@ -47,8 +49,8 @@ int main(int argc, char **argv) {
     /*
      * Parsing of the command-line arguments for this WRENCH simulation
      */
-    if (argc != 4) {
-        std::cerr << "Usage: " << argv[0] << " <xml platform file> <workflow file> <benchmark file>" << std::endl;
+    if (argc > 6 || argc < 5) {
+        std::cerr << "Usage: " << argv[0] << " <xml platform file> <workflow file> <benchmark file> <vm_list file> [seed]" << std::endl;
         exit(1);
     }
 
@@ -59,11 +61,25 @@ int main(int argc, char **argv) {
 
     char *benchmark_file = argv[3];
 
+    char *vm_list_file = argv[4];
+    VMListHolder vm_list_holder(vm_list_file);
+    const double user_deadline = 20000;
+
+    int seed = 0;
+    if (argc == 6) {
+        seed = atoi(argv[5]);
+    }
+    srand(seed);
+
     /* Reading and parsing the workflow description file to create a wrench::Workflow object */
     std::cerr << "Loading workflow..." << std::endl;
     wrench::Workflow *workflow;
     if (ends_with(workflow_file, "dax")) {
-        workflow = wrench::PegasusWorkflowParser::createNoisedWorkflowFromDAX(workflow_file, "1000Gf", benchmark_file);
+        if (seed % 2 != 0) {
+            workflow = wrench::PegasusWorkflowParser::createNoisedWorkflowFromDAX(workflow_file, "1000Gf", benchmark_file, /*reduntant_deps = */0, seed);
+        } else {
+            workflow = wrench::PegasusWorkflowParser::createWorkflowFromDAX(workflow_file, "1000Gf", /*reduntant_deps = */0);
+        }
     } else if (ends_with(workflow_file,"json")) {
         workflow = wrench::PegasusWorkflowParser::createWorkflowFromJSON(workflow_file, "1000Gf");
     } else {
@@ -94,14 +110,18 @@ int main(int argc, char **argv) {
      */
     std::string storage_host = "Fafard";
     std::cerr << "Instantiating a SimpleStorageService on " << storage_host << "..." << std::endl;
-    auto storage_service = simulation.add(new wrench::SimpleStorageService(storage_host, {"/"}));
-    storage_services.insert(storage_service);
+    
+
+    auto local_storage = simulation.add(new wrench::SimpleStorageService("Fafard", {"/"}));
+    auto remote_storage = simulation.add(new wrench::SimpleStorageService("Callisto", {"/"}));
+    storage_services.insert(local_storage);
+    storage_services.insert(remote_storage);
 
     /* Construct a list of hosts (in the example only one host) on which the
      * cloud service will be able to run tasks
      */
     std::string executor_host = "Tremblay";
-    std::vector<std::string> execution_hosts = {executor_host};
+    std::vector<std::string> execution_hosts = hostname_list;
 
     /* Create a list of compute services that will be used by the WMS */
     std::set<std::shared_ptr<wrench::ComputeService>> compute_services;
@@ -140,9 +160,22 @@ int main(int argc, char **argv) {
      */
     auto wms = simulation.add(
             new wrench::SimpleWMS(std::unique_ptr<wrench::CloudStandardJobScheduler>(
-                    new wrench::CloudStandardJobScheduler(storage_service)),
+                    new wrench::CloudStandardJobScheduler(*storage_services.begin())),
                                   nullptr, compute_services, storage_services, wms_host));
-
+    /*
+    auto wms = simulation.add(
+            new wrench::SimpleWMS(std::make_unique<GeneticScheduler>(
+                                            remote_storage,
+                                            local_storage,
+                                            vm_list_holder,
+                                            workflow,
+                                            user_deadline,
+                                            false,
+                                            3,
+                                            10
+                                            ),
+                                  nullptr, compute_services, storage_services, wms_host));
+    */
     wms->addWorkflow(workflow);
 
     /* Instantiate a file registry service to be started on some host. This service is
@@ -173,7 +206,7 @@ int main(int argc, char **argv) {
     std::cerr << "Staging input files..." << std::endl;
     for (auto const &f : workflow->getInputFiles()) {
         try {
-            simulation.stageFile(f.second, storage_service);
+            simulation.stageFile(f.second, local_storage);
         } catch (std::runtime_error &e) {
             std::cerr << "Exception: " << e.what() << std::endl;
             return 0;
@@ -196,8 +229,16 @@ int main(int argc, char **argv) {
      */
     std::vector<wrench::SimulationTimestamp<wrench::SimulationTimestampTaskCompletion> *> trace;
     trace = simulation.getOutput().getTrace<wrench::SimulationTimestampTaskCompletion>();
+    double start_time = 1e100, finish_time = -1e100;
+    for (auto ts : trace) {
+        start_time = std::min(ts->getDate(), start_time);
+        finish_time = std::max(ts->getDate(), finish_time);
+    }
+    std::cerr.precision(20);
+    std::cerr << "Total execution time: " << finish_time - start_time << " seconds" << " " << finish_time << std::endl;
     std::cerr << "Number of entries in TaskCompletion trace: " << trace.size() << std::endl;
     std::cerr << "Task in first trace entry: " << trace[0]->getContent()->getTask()->getID() << std::endl;
+    std::cerr << "Number of entries in TaskCompletion trace: " << trace.size() << std::endl;
 
     return 0;
 }

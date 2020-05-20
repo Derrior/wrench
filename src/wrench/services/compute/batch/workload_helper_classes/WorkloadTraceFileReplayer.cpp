@@ -96,7 +96,7 @@ namespace wrench {
                 double parallel_efficiency = 1.0;
                 WorkflowTask *task = workflow->addTask(
                         this->getName() + "_job_" + std::to_string(job_count) + "_task_" + std::to_string(i),
-                        task_flops,
+                        task_flops, task_flops,
                         num_cores_per_node, num_cores_per_node, parallel_efficiency,
                         requested_ram);
                 to_submit.push_back(task);

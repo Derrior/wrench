@@ -66,7 +66,7 @@ namespace wrench {
       for (auto t : tasks) {
         this->tasks.push_back(t);
         t->setJob(this);
-        this->total_flops += t->getFlops();
+        this->total_flops += t->getFlopsPrecise();
       }
       this->workflow = workflow;
       this->name = "standard_job_" + std::to_string(WorkflowJob::getNewUniqueNumber());

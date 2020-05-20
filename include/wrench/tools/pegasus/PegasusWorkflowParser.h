@@ -65,7 +65,7 @@ namespace wrench {
          * @brief Method to parse workflow adding noise
          */
         static Workflow *createNoisedWorkflowFromDAX(const std::string &filename, const std::string &reference_flop_rate,
-                                                     const std::string &benchmarks_file, bool redundant_dependencies = false);
+                                                     const std::string &benchmarks_file, bool redundant_dependencies = false, int seed = 0);
     };
 
 };

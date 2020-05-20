@@ -32,10 +32,10 @@ namespace wrench {
      * @param parallel_efficiency: the multi-core parallel efficiency
      * @param memory_requirement: memory requirement in bytes
      */
-    WorkflowTask::WorkflowTask(const std::string id, const double flops, const unsigned long min_num_cores,
+    WorkflowTask::WorkflowTask(const std::string id, const double flops, const double flops_estimated, const unsigned long min_num_cores,
                                const unsigned long max_num_cores, const double parallel_efficiency,
                                const double memory_requirement) :
-            id(id), flops(flops),
+            id(id), flops(flops), flops_estimated(flops_estimated),
             min_num_cores(min_num_cores),
             max_num_cores(max_num_cores),
             parallel_efficiency(parallel_efficiency),
@@ -125,6 +125,15 @@ namespace wrench {
      * @return a number of flops
      */
     double WorkflowTask::getFlops() const {
+        return this->flops_estimated;
+    }
+
+    /**
+     * @brief Get the number of flops of the task
+     *
+     * @return a number of flops
+     */
+    double WorkflowTask::getFlopsPrecise() const {
         return this->flops;
     }
 

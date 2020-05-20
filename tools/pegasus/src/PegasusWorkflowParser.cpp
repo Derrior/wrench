@@ -103,7 +103,9 @@ namespace wrench {
                         throw std::invalid_argument("Workflow::createWorkflowFromJson(): Job " + name + " has uknown type " + type);
                     }
 
-                    task = workflow->addTask(name, runtime * flop_rate, num_procs, num_procs, 1.0, 0.0);
+                    task = workflow->addTask(name, /*flops*/ runtime * flop_rate,
+                                            /*flops_estimated*/ runtime * flop_rate,
+                                            num_procs, num_procs, 1.0, 0.0);
 
                     // task priority
                     try {
@@ -273,7 +275,7 @@ namespace wrench {
             // Create the task
             // If the DAX says num_procs = x, then we set min_cores=1, max_cores=x, efficiency=1.0
             double task_complexity = processor(id, runtime);
-            task = workflow->addTask(id, task_complexity, 1, num_procs, 1.0, 0.0);
+            task = workflow->addTask(id, /*flops*/ task_complexity, /*flops_estimated*/ runtime, 1, num_procs, 1.0, 0.0);
 
             // Go through the children "uses" nodes
             for (pugi::xml_node uses = job.child("uses"); uses; uses = uses.next_sibling("uses")) {
@@ -335,7 +337,7 @@ namespace wrench {
     }
 
     Workflow *PegasusWorkflowParser::createNoisedWorkflowFromDAX(const std::string &filename, const std::string &reference_flop_rate,
-                                                                 const std::string &benchmarks_file, bool redundant_dependencies) {
+                                                                 const std::string &benchmarks_file, bool redundant_dependencies, int seed) {
         double flop_rate = 0;
 
         try {
@@ -345,14 +347,14 @@ namespace wrench {
         }
 
         EnvironmentInstability instability = ComputeInstability(benchmarks_file);
-        std::random_device rd;
         std::mt19937 generator;
+        generator.seed(seed);
         std::normal_distribution<> instability_distribution(0, instability.deviation);
 
         return createWorkflowFromDAXWithProcessor(filename, 
                     [flop_rate, &instability, &instability_distribution, &generator]
                     (const std::string &/*id*/, double runtime) {
-                        return flop_rate * abs((1 + instability.mean) * runtime + instability_distribution(generator));
+                        return flop_rate * runtime * abs(1 + instability.mean + instability_distribution(generator));
                     }, redundant_dependencies);
     }
 
@@ -392,7 +394,7 @@ namespace wrench {
             double second_momentum = (test_case_dev1.second - result.mean);
             second_momentum *= second_momentum;
 
-            result.deviation += second_momentum / (deviations_by_test_case.size() - 1); // corrected deviation
+            result.deviation += second_momentum;
         }
         std::cerr << "Mean relative deviation from runs: " << result.mean << std::endl;
         std::cerr << "Standard deviation of mean relative deviation from runs: " << result.deviation << std::endl;

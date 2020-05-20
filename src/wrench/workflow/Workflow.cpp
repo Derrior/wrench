@@ -40,6 +40,7 @@ namespace wrench {
      */
     WorkflowTask *Workflow::addTask(const std::string id,
                                     double flops,
+                                    double flops_estimated,
                                     unsigned long min_num_cores,
                                     unsigned long max_num_cores,
                                     double parallel_efficiency,
@@ -65,7 +66,7 @@ namespace wrench {
         }
 
         // Create the WorkflowTask object
-        WorkflowTask *task = new WorkflowTask(id, flops, min_num_cores, max_num_cores, parallel_efficiency,
+        WorkflowTask *task = new WorkflowTask(id, flops, flops_estimated, min_num_cores, max_num_cores, parallel_efficiency,
                                               memory_requirement);
         // Create a DAG node for it
         task->workflow = this;

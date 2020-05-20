@@ -8,6 +8,7 @@
  *
  */
 
+#include <cstdlib>
 #include <cfloat>
 #include <numeric>
 
@@ -924,7 +925,8 @@ namespace wrench {
                       });
         }
 
-        auto picked_host = *(possible_hosts.begin());
+        auto picked_host = *(possible_hosts.begin() + (rand() % possible_hosts.size()));
+        std::cerr << possible_hosts.size() << " " << this->execution_hosts.size() << std::endl;
         return picked_host;
     }
 

@@ -30,6 +30,8 @@ namespace wrench {
 
         double getFlops() const;
 
+        double getFlopsPrecise() const;
+
         unsigned long getMinNumCores() const;
 
         unsigned long getMaxNumCores() const;
@@ -254,7 +256,8 @@ namespace wrench {
         std::string id;                    // Task ID
         std::string cluster_id;            // ID for clustered task
 //        TaskType task_type;                // Task type
-        double flops;                      // Number of flops
+        double flops;                      // Number of flops which will be executed
+        double flops_estimated;            // Number of flops from task description, visible by scheduler
         double average_cpu = -1;           // Average CPU utilization
         unsigned long bytes_read = -1;     // Total bytes read in KB
         unsigned long bytes_written = -1;  // Total bytes written in KB
@@ -280,6 +283,7 @@ namespace wrench {
         // Private constructor (called by Workflow)
         WorkflowTask(std::string id,
                      double t,
+                     double estimated_t,
                      unsigned long min_num_cores,
                      unsigned long max_num_cores,
                      double parallel_efficiency,
